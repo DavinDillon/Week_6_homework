@@ -167,10 +167,15 @@ pre code {
 </div>
 
 
+<p>I wanted to get a real sense of the differences in what I consider to be similar first world English speaking countries. Precisely, I wanted to look at violent crime rates, especially where firearms were involved. England and Australia have passed strict gun control laws, where the United States has not. Does this make any difference in violent crime? Does it have an impact specifically on murder rates? I would like to see if an obvious answer appears from reliable data.</p>
 <div id="united-states-data" class="section level2">
 <h2>United States Data</h2>
 <ol style="list-style-type: decimal">
-<li>This data set covers the number of different violent crimes committed in cities of different sizes in the United States. It also separates the columns into numbers based on what type of crime it was, as well as the type of weapon used. The data comes from <a href="https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/topic-pages/tables/table-19">ucr.fbi.gov</a></li>
+<li><p>This data set covers the number of different violent crimes committed in cities of different sizes in the United States in 2019. It also separates the columns into numbers based on what type of crime it was, as well as the type of weapon was used. The data comes from <a href="https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/topic-pages/tables/table-19">ucr.fbi.gov</a></p></li>
+<li><p>This data comes from an official US government website, so it seems it would be data collected by the government for the purposes of tracking crime.</p></li>
+<li><p>The values are the numbers of each type of crime and the numbers of weapon types used. The categories are the types of crimes, the types of weapons used, and the size of the cities where the crimes occurred.</p></li>
+<li><p>The range seems to go from 1.2 to 505122.The minimum would seem to be 0. Negative values would not make sense here.</p></li>
+<li><p>The terms are pretty self explanatory. If anything, some research into the precise meanings of certain crimes and terms like strongarm might be needed.</p></li>
 </ol>
 <pre class="r"><code>US_data &lt;- read_excel(&quot;C:/Users/davin/OneDrive/Documents/UHD Files/Spring 2022/Data 2401 11864/wk6homework/Table-19.xls&quot;)</code></pre>
 <pre><code>## New names:
@@ -202,7 +207,16 @@ pre code {
 ## * `` -&gt; ...6
 ## * ...</code></pre>
 <pre class="r"><code>View(UK_data)</code></pre>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
+<div id="australian" class="section level2">
+<h2>Australian</h2>
+<ol style="list-style-type: decimal">
+<li><p>The next data set covers Australian crime data in 2020. It comes from <a href="https://www.abs.gov.au/statistics/people/crime-and-justice/recorded-crime-victims/latest-release#data-download">abs.gov.au</a></p></li>
+<li><p>It seems to have been created by the Australian Bureau of Statistics, which is a government agency.</p></li>
+<li><p>The data has rows separated into sections, with each section being the type of crime and broken down into rows with the number of the type of weapon used.</p></li>
+<li><p>The range of values go from 0 to 64907. Negative numbers would not make sense here.</p></li>
+<li><p>As with the United Kingdom data, I would need to look into the Australian states and territories.</p></li>
+</ol>
 <pre class="r"><code>AU_data &lt;- read_excel(&quot;C:/Users/davin/OneDrive/Documents/UHD Files/Spring 2022/Data 2401 11864/wk6homework/Australian_victim_data.xlsx&quot;)</code></pre>
 <pre><code>## New names:
 ## * `` -&gt; ...2
@@ -212,9 +226,6 @@ pre code {
 ## * `` -&gt; ...6
 ## * ...</code></pre>
 <pre class="r"><code>View(AU_data)</code></pre>
-</div>
-<div id="findings" class="section level1">
-<h1>Findings</h1>
 </div>
 
 
