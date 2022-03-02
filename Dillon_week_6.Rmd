@@ -1,0 +1,67 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readxl)
+```
+
+I wanted to get a real sense of the differences in what I consider to be similar first world English speaking countries. Precisely, I wanted to look at violent crime rates, especially where firearms were involved. England and Australia have passed strict gun control laws, where the United States has not. Does this make any difference in violent crime? Does it have an impact specifically on murder rates? I would like to see if an obvious answer appears from reliable data.
+
+
+## United States Data
+
+1. This data set covers the number of different violent crimes committed in cities of different sizes in the United States in 2019. It also separates the columns into numbers based on what type of crime it was, as well as the type of weapon was used. The data comes from [ucr.fbi.gov](https://ucr.fbi.gov/crime-in-the-u.s/2019/crime-in-the-u.s.-2019/topic-pages/tables/table-19)
+
+2. This data comes from an official US government website, so it seems it would be data collected by the government for the purposes of tracking crime. 
+
+3. The values are the numbers of each type of crime and the numbers of weapon types used. The categories are the types of crimes, the types of weapons used, and the size of the cities where the crimes occurred. 
+
+4. The range seems to go from 1.2 to 505122.The minimum would seem to be 0. Negative values would not make sense here.
+
+5. The terms are pretty self explanatory. If anything, some research into the precise meanings of certain crimes and terms like strongarm might be needed.
+
+```{r}
+US_data <- read_excel("C:/Users/davin/OneDrive/Documents/UHD Files/Spring 2022/Data 2401 11864/wk6homework/Table-19.xls")
+View(US_data)
+
+```
+
+## United Kingdom Data
+
+1. The next data covers the number of crimes where a weapon was used in the United Kingdom over a number of years. The data comes from the website [ons.gov](https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/offencesinvolvingtheuseofweaponsdatatables)
+
+2. It seems to have been created by The Office of National Statistics, which reports to the government of the United Kingdom.
+
+3. The column titles are in row 6 and seem to mainly separate the data from one year to the next.
+
+4. The units seem to be simply the numbers of the offenses for different row categories and column years. 
+
+5. The rows have totals for all of England and Wales, as well as totals for different regions. The columns are years.
+
+6. The range seems to go from 1 to 9865. It seems 0 would be possible, but negative numbers would not make sense. We can't have negative numbers of a crime.
+
+7. The terms all make sense. What I am not familiar with is the states/counties/provinces the United Kingdom separates these numbers 
+
+```{r}
+UK_data <- read_excel("C:/Users/davin/OneDrive/Documents/UHD Files/Spring 2022/Data 2401 11864/wk6homework/UK-table.xlsx")
+
+View(UK_data)
+
+```
+
+## Australian
+
+1. The next data set covers Australian crime data in 2020. It comes from [abs.gov.au](https://www.abs.gov.au/statistics/people/crime-and-justice/recorded-crime-victims/latest-release#data-download) 
+
+2. It seems to have been created by the Australian Bureau of Statistics, which is a government agency. 
+
+3. The data has rows separated into sections, with each section being the type of crime and broken down into rows with the number of the type of weapon used. 
+
+4. The range of values go from 0 to 64907. Negative numbers would not make sense here. 
+
+5. As with the United Kingdom data, I would need to look into the Australian states and territories. 
+
+``` {r}
+AU_data <- read_excel("C:/Users/davin/OneDrive/Documents/UHD Files/Spring 2022/Data 2401 11864/wk6homework/Australian_victim_data.xlsx")
+View(AU_data)
+
+```
